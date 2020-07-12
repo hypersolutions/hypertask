@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <PackageId>Hyper.Log</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Hyperbolic Solutions</Authors>
+        <Company>Hyperbolic Solutions</Company>
+        <Title>Hyperbolic Mapping Framework</Title>
+        <PackageProjectUrl>https://github.com/hypersolutions/hyperlog</PackageProjectUrl>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <Description>ASP.NET Logging framework</Description>
+        <Copyright>Hyperbolic Solutions 2020</Copyright>
+        <PackageTags>Logging</PackageTags>
+        <RepositoryUrl>https://github.com/hypersolutions/hyperlog</RepositoryUrl>
+        <RepositoryType>github</RepositoryType>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)" />
+    </ItemGroup>
+</Project>
