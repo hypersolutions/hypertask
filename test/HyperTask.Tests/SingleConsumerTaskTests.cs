@@ -63,9 +63,10 @@ namespace HyperTask.Tests
         {
             public int Count { get; private set; }
             
-            protected override void HandleItem(int item)
+            protected override Task HandleItemAsync(int item)
             {
                 Count++;
+                return Task.CompletedTask;
             }
         }
     }

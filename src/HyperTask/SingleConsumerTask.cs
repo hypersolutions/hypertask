@@ -17,7 +17,7 @@ namespace HyperTask
 
         protected SingleConsumerTask()
         {
-            _consumerTask = Task.Run(Consumer);
+            _consumerTask = Task.Run(async () => await Consumer());
         }
         
         ~SingleConsumerTask()
@@ -40,26 +40,27 @@ namespace HyperTask
             GC.SuppressFinalize(this);
         }
         
-        private void Consumer()
+        private async Task Consumer()
         {
             foreach (var item in _queue.GetConsumingEnumerable())
             {
                 try
                 {
-                    HandleItem(item);
+                    await HandleItemAsync(item);
                 }
                 catch (Exception error)
                 {
-                    HandleError(error);
+                    await HandleErrorAsync(error);
                 }
             }
         }
 
-        protected abstract void HandleItem(T item);
+        protected abstract Task HandleItemAsync(T item);
 
-        protected virtual void HandleError(Exception error)
+        protected virtual Task HandleErrorAsync(Exception error)
         {
             Console.WriteLine(error);
+            return Task.CompletedTask;
         }
         
         protected virtual void Dispose(bool disposing)

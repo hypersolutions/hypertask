@@ -15,15 +15,16 @@ Provides some basic support for patterns encountered using tasks.
 This provides an implementation of the producer/consumer pattern that allows multiple producers to post messages which 
 a single consumer is responsible for handing.
 
-You inherit from the base class _SingleConsumerTask_ and override the _HandleItem_ method. You can also override the 
-_HandleError_ method to handle any errors as required.
+You inherit from the base class _SingleConsumerTask_ and override the _HandleItemAsync_ method. You can also override the 
+_HandleErrorAsync_ method to handle any errors as required.
 
 ```c#
 public sealed class TestSingleConsumerTask : SingleConsumerTask<string>
 {
-    protected override void HandleItem(string item)
+    protected override Task HandleItemAsync(string item)
     {
         Console.WriteLine($"Encountered {item});
+        return Task.CompletedTask;
     }
 }
 ```

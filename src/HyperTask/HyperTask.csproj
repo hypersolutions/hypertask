@@ -7,7 +7,7 @@
     
     <PropertyGroup>
         <PackageId>HyperTask</PackageId>
-        <Version>1.0.0</Version>
+        <Version>1.0.1</Version>
         <Authors>Hyperbolic Solutions</Authors>
         <Company>Hyperbolic Solutions</Company>
         <Title>Hyperbolic Tasks</Title>
@@ -19,7 +19,7 @@
         <RepositoryUrl>https://github.com/hypersolutions/hypertask</RepositoryUrl>
         <RepositoryType>github</RepositoryType>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-        <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+        <PackageReleaseNotes>Made SingleConsumerTask HandleItem and HandleError support async</PackageReleaseNotes>
     </PropertyGroup>
 
     <ItemGroup>
